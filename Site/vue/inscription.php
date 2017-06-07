@@ -58,7 +58,7 @@
             </div>
        </p>
        <p>
-<input id="mdpm" type="password" name="mdp" placeholder="Mot de passe" title="Minimum 8 caractères (uniquement des chiffres et des lettres); au moins 1 lettre et 1 chiffre" required/>
+<input id="mdpm" type="password" name="mdp" placeholder="Mot de passe" title="Minimum 8 caractères ; au moins 1 lettre et 1 chiffre" required/>
        </p>
 
        <p>
