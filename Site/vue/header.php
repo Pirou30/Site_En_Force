@@ -9,7 +9,7 @@
 
       <link rel="stylesheet" type="text/css" href="vue/style.css" />
       <title>
-          <?= $onglet;?>
+          <? php $onglet;?>
       </title>
   </head>
   <div id="blur"></div>
