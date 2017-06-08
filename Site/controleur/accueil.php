@@ -1,7 +1,7 @@
 <?php
 
     $onglet = "DOMISEP";
-  //  $titre = "Mon site / Accueil";
+  // $titre = "Mon site / Accueil";
     $menu = $function; //connecte ou pas
 
     ob_start();//bloque tous les envois des fichiers que l'on appel + bloque tous les echos
