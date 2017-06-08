@@ -1,10 +1,10 @@
 <body id="bodyautre">
   <div id="bannieredash" class="banner2">
 
-    <h1 id="bienvenue" class="text">Voici votre installation, <?php echo $_SESSION['prenom']; ?> ♪</h1>
+    <h1 id="bienvenue" class="text">Voici votre installation, <?php echo $_SESSION['prenom']; ?></h1>
 	</div>
   <?php
-  ini_set('display_errors', 1); //pour afficher sur mamp quand il y'a des erreurs
+  ini_set('display_errors', 1); //pour afficher sur mamp quand il y a des erreurs
   ?>
   <div id="contenu">
     <?php
