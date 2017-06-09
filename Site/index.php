@@ -32,16 +32,7 @@ if(isset($_COOKIE['login']) && isset($_COOKIE['mdp']))
          $_SESSION['id_utilisateur']= $cook['id_utilisateur'];
          $_SESSION['type'] = $cook['type'];
          $_SESSION['prenom'] = $cook['prenom'];
-
-         if($_SESSION['type']=='admin')
-         {
-           $controleur = 'liste_utilisateur';
-         }
-         else
-         {
-           $controleur = 'dashboard';
-         }
-
+         $controleur = 'dashboard';
        }
        else {
          $controleur = 'connexion';
