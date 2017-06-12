@@ -1,3 +1,5 @@
+
+
 <?php
 
 
@@ -43,5 +45,10 @@ function get_profil($db, $userid)
   $_POST['date_de_naissance'] = $donnees['date_naissance'];
   $_POST['date_d_ajout'] = $donnees ['date_d_ajout'];
 }
-
+// fonction permettant de chercher le mot de passe d'un utilisateur avec un identifiant avec la base de données
+function mdp($db,$identifiant)
+{
+  $reponse = $db->query('SELECT id_utilisateur, mot_de_passe FROM utilisateur WHERE login="'.$identifiant.'"');
+  return $reponse;
+}
  ?>
