@@ -1,0 +1,13 @@
+<?php
+
+$onglet = "Pièces";
+$titre = "Pièces";
+$menu = $function;
+
+ob_start();
+include("vue/piece.php");
+$contenu = ob_get_clean();
+
+require("vue/gabarit.php");
+
+?>
