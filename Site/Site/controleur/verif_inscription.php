@@ -5,6 +5,13 @@ require('modele/gestion_utilisateur.php');
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['tel']) && isset($_POST['ville']) && isset($_POST['type_voie']) && isset($_POST['code_postal'])
  && isset($_POST['date_naissance']) && isset($_POST['login']) && isset($_POST['mdp']) && isset($_POST['mdp_2']) && isset($_POST['email']) && isset($_POST['cle']))
 {
+ $vTel=
+ $vVille=
+ $vType_voie=
+ $vCode_postal=
+ $vemail=
+ 
+ 
   if(strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 25
     || strlen($_POST['prenom']) < 2 || strlen($_POST['prenom']) > 25
     || preg_match($vTel,$_POST['tel'])==false
