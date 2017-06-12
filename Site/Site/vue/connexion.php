@@ -14,7 +14,7 @@
   }
   if (isset($_SESSION['erreur']))
   {
-  echo '<h3 id="erreurco" >Une erreur est survenue car : '.$_SESSION['erreur'];
+  echo '<h3 id="erreurco" >Une erreur est survenue car : '.$_SESSION['erreur']. '</h3>';
   unset($_SESSION['erreur']);
 
   }
