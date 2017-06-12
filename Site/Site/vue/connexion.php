@@ -4,6 +4,21 @@
   
 
   </div>
+    
+    <?php
+
+  if(isset($_SESSION['inscription']))
+  {
+      echo '<h3 id="inscreussi" > Inscription réussie !</h3>';
+      unset($_SESSION['inscription']);
+  }
+  if (isset($_SESSION['erreur']))
+  {
+  echo '<h3 id="erreurco" >Une erreur est survenue car : '.$_SESSION['erreur'];
+  unset($_SESSION['erreur']);
+
+  }
+  ?>
   
 <form method="POST" class="basic-grey connecto" action="index.php?page=dashboard">  
 
