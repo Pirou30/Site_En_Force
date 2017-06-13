@@ -1,5 +1,4 @@
 
-
 <?php
 
 
@@ -45,10 +44,34 @@ function get_profil($db, $userid)
   $_POST['date_de_naissance'] = $donnees['date_naissance'];
   $_POST['date_d_ajout'] = $donnees ['date_d_ajout'];
 }
+
+
 // fonction permettant de chercher le mot de passe d'un utilisateur avec un identifiant avec la base de données
 function mdp($db,$identifiant)
 {
   $reponse = $db->query('SELECT id_utilisateur, mot_de_passe FROM utilisateur WHERE login="'.$identifiant.'"');
   return $reponse;
 }
+
+//Fonction permettant de définir la session de l'utilisateur connecté
+function set_session_current_user($db, $identifiant)
+{
+  $sql = "SELECT * FROM utilisateur WHERE login = '".$identifiant."'";
+  $request = $db->query ($sql);                          //Execution de la requete sur db
+  $donnees = $request -> fetch();                     //$donnees contient toutes les info personnelles de l'utilisateur connecté
+  
+  $_SESSION['nom'] = $donnees['nom'];
+  $_SESSION['prenom'] = $donnees['prenom'];
+  $_SESSION['email'] = $donnees['email'];
+  $_SESSION['numero_de_telephone'] = $donnees['numero_de_telephone'];
+  $_SESSION['adresse'] = $donnees['adresse'];
+  $_SESSION['login'] = $donnees['login'];
+  $_SESSION['date_de_naissance'] = $donnees['date_naissance'];
+  $_SESSION['date_d_ajout'] = $donnees ['date_d_ajout'];
+  $_SESSION['id_utilisateur'] = $donnees['id_utilisateur'];
+  $_SESSION['id_utilisateur_1'] = $donnees['id_utilisateur_1'];
+  $_SESSION['type'] = $donnees['type'];
+}
+  
+
  ?>
