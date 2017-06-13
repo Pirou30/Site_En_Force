@@ -1,4 +1,3 @@
-
 <?php
 
 // Ceci permet de gérer le formulaire de connexion des utilisateurs
@@ -26,5 +25,21 @@ else   // Dans le cas contraire
   
   else      // Dans le cas où le mdp entré correspond au mdp stocké dans la db
   {
-    
+    $_SESSION["UserID"] = $ligne['id_utilisateur'];
+    set_session_current_user($db,$_POST['login']); //Cf  gestion d'utilisateur + defini la session de l'utilisateur connecté
+    $droit = $_SESSION['type'];
+    if ($droit == admin)
+    {
+      
+    }
+    elseif ($droit == secondaire)
+    {
+      
+    }
+    elseif ($droit == primaire)
+    {
+      
+    }
+  }
+}
 ?>
