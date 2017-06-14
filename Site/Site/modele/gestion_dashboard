@@ -1,0 +1,26 @@
+<?php
+
+
+//Fonction qui retourne le nom de la pièce 
+function matchName ($id_piece){
+$db = $_SERVER['name']; //prend le nom du serveur
+$name = $db->prepare('SELECT localisation_dans_la_maison FROM piece WHERE id_piece=:id');
+$name->execute(array(':id'=>$id_piece));
+$response = $name->fetch();:
+return $response['localisation_dans_la_maison'];
+$name->closeCursor();
+}
+
+
+
+//recupere la catégorie de l'objet
+function matchCategorie ($id_objet){
+$db = $_SERVER['name'];
+$name =	$db->prepare('SELECT nom FROM categorie WHERE id_categorie = (SELECT id_categorie FROM objet_connecte WHERE id_objet =:id1)');
+$name->execute(array(':id1'=>$id_objet));
+$response=$name->fetch();
+return $response['nom'];
+$name->closeCursor();
+}
+
+?>
