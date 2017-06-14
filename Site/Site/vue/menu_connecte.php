@@ -17,7 +17,7 @@
   <ul>
 
         <li class ="nav"> <a href="index.php?page=dashboard">Vue Générale</a></li>
-        <li class ="nav"> <a href="">Pièces</a></li>
+        <li class ="nav"> <a href="index.php?page=piece">Pièces</a></li>
         <li class ="nav"> <a href="">Objets connectés</a></li>
         <li class ="nav"> <a href="">Préférences</a></li>
         <li > <p><a href="index.php?page=connexion&function=deconnecte"></a></p></li>
