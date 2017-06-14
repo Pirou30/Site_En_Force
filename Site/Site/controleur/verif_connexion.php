@@ -28,9 +28,20 @@ else   // Dans le cas contraire
     $_SESSION["UserID"] = $ligne['id_utilisateur'];
     set_session_current_user($db,$_POST['login']); //Cf  gestion d'utilisateur + defini la session de l'utilisateur connecté
     $droit = $_SESSION['type'];
+    
     if ($droit == admin)
     {
+      //création du cookie 
+      //Stockage temporaire des informations sur l'ordinateur du visiteur
+      $cookie_name = "login";           //nom du cookie
+      $cookie_value = $_POST['login'];  //Contenu du cookie
+      setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
       
+      $cookie_name = "mdp";
+      $cookie_value = sha1($_POST['mdp']);
+      setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+      echo '' ;                     //A COMPLETER
+      exit();
     }
     elseif ($droit == secondaire)
     {
