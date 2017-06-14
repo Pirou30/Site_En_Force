@@ -29,7 +29,7 @@ else   // Dans le cas contraire
     set_session_current_user($db,$_POST['login']); //Cf  gestion d'utilisateur + defini la session de l'utilisateur connecté
     $droit = $_SESSION['type'];
     
-    if ($droit == admin)
+    if ($droit == 'admin')
     {
       //création du cookie 
       //Stockage temporaire des informations sur l'ordinateur du visiteur
@@ -43,7 +43,7 @@ else   // Dans le cas contraire
       echo '' ;                     //A COMPLETER
       exit();
     }
-    elseif ($droit == secondaire)
+    elseif ($droit == 'secondaire')
     {
       $cookie_name = "login";
       $cookie_value = $_POST['login'];
@@ -54,10 +54,19 @@ else   // Dans le cas contraire
       setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
       header();   //A COMPLETER                                            + Redirection vers le dashboard utilisateur secondaire 
       exit();
-    }
-    elseif ($droit == primaire)
-    {
       
+    }
+    elseif ($droit == 'primaire')
+    {
+       $cookie_name = "login";
+      $cookie_value = $_POST['login'];
+      setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+      $cookie_name = "mdp";
+      $cookie_value = sha1($_POST['mdp']);
+      setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+      echo '' ;                                   //Redirection vers le dashboard utilisateur primaire   A COMPLETER 
+      exit();   
     }
   }
 }
