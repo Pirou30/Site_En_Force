@@ -50,3 +50,12 @@ function ajout_objet($db)
     $reponse = $db->query('SELECT * FROM categorie');
     return $reponse;
   }
+
+
+// fonction qui cherche toutes les pieces dans la base de données dans l'ordre alphabétique en fonction du nom
+  function recup_all_piece_ordered_by_name($db) 
+  {
+    $id_utilisateur = $_SESSION['id_utilisateur'];
+    $reponse = $db->query("SELECT * FROM piece WHERE id_piece IN (SELECT id_piece FROM posseder WHERE id_utilisateur = '".$id_utilisateur."') ORDER BY localisation_dans_la_maison DESC");
+    return $reponse;
+  }
