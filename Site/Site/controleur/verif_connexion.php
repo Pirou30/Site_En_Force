@@ -45,7 +45,15 @@ else   // Dans le cas contraire
     }
     elseif ($droit == secondaire)
     {
+      $cookie_name = "login";
+      $cookie_value = $_POST['login'];
+      setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
       
+      $cookie_name = "mdp";
+      $cookie_value = sha1($_POST['mdp']);
+      setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+      header();   //A COMPLETER                                            + Redirection vers le dashboard utilisateur secondaire 
+      exit();
     }
     elseif ($droit == primaire)
     {
