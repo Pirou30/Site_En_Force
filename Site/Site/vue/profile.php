@@ -58,7 +58,15 @@
       <p>
           <?php echo ($_POST['date_d_ajout'])?>
       </p>
+          <form  method="POST" action="index.php?page=profile_modification">
+        
+        <input type="hidden" name="user_type" value="<?php echo $user_type;?>">
 
+        <input type="hidden" name="user_name" value="<?php echo $_POST['prenom'];?>">
+
+        <input type="hidden" name="user_login" value="<?php echo $_POST['login'];?>">
+        <input class=boutonmodifier type="submit" value="modifier"/>
+      </form>
     </div>
   </p>
 </body>
