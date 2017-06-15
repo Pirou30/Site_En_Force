@@ -5,11 +5,11 @@ require('modele/gestion_utilisateur.php');
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['tel']) && isset($_POST['ville']) && isset($_POST['type_voie']) && isset($_POST['code_postal'])
  && isset($_POST['date_naissance']) && isset($_POST['login']) && isset($_POST['mdp']) && isset($_POST['mdp_2']) && isset($_POST['email']) && isset($_POST['cle']))
 {
- $vTel=
- $vVille=
- $vType_voie=
- $vCode_postal=
- $vemail=
+ $vTel= '#^0[1-7]\d{8}$#';
+ $vVille= '#[a-zA-Z\'-]+#';
+ $vType_voie= '#[a-zA-Z0-9\'-]+#';
+ $vCode_postal= '#^[0-9]{5,5}$#';
+ $vemail= '#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#';
  
  
   if(strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 25
