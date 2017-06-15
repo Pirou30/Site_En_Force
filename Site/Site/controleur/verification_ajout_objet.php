@@ -14,3 +14,14 @@
       }
     }
     $reponse->closeCursor();
+    
+    // Sinon , on vérifie que le numéro de série correspond bien à un objet existant
+  	$a=0;
+  	$reponse = recup_all_serie($db);
+    while ($donnees = $reponse->fetch())
+    {
+      if($donnees['numero_de_serie'] == $_POST['cle'])
+      {
+        $a=1;
+      }
+    }
