@@ -17,17 +17,20 @@
 
       <h3>Informations personnelles</h3>
       <p>
+      <label for="nomm">Nom </label>
       <input id="nomm" type="text" name="nom" placeholder=" Nom"  required  title="Le nom doit contenir entre 2 et 25 caractères"/>
+      <label for="prenomm">Prénom </label>
       <input id="prenomm" type="text" name="prenom" placeholder=" Prénom" required title="Le prénom doit contenir entre 2 et 25 caractères"/>
       <div id="eveM">
+      <label for="mailm">E-mail </label>
       <input id="mailm" type="email" name="email" placeholder=" E-mail" required title="E-mail du type : user@domain.com"/>
       
       </div>
 
      </p>
 
-
    <p>
+   <label for="telm">Téléphone </label>
    <input id="telm" type="text" name="tel" placeholder=" Téléphone" required title="Numéro de téléphone sans espace du type : 0102030405"/>
 
    </p>
@@ -49,16 +52,19 @@
  <h3>Informations de connexion</h3>
        <p>
            <div id="eveL" >
+         <label for="loginm">pseudo </label>
          <input id="loginm" type="text" name="login" placeholder="Pseudo utilisé pour la connexion" size="25" required title="Le login doit contenir entre 3 et 25 caractères"/>
           
 
             </div>
        </p>
        <p>
+<label for="mdpm">Mot de passe </label>
 <input id="mdpm" type="password" name="mdp" placeholder="Mot de passe" title="Minimum 8 caractères (uniquement des chiffres et des lettres); au moins 1 lettre et 1 chiffre" required/>
        </p>
 
        <p>
+<label for="mdp2m">Confimer le mot de passe </label>
 <input id="mdp2m" type="password"  name="mdp_2" placeholder="Confirmer le mot de passe" required/>
        </p>
 
