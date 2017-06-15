@@ -1,0 +1,54 @@
+?php
+  if (!isset($_SESSION['id_utilisateur_1']))
+  {
+    include("vue/profile_menu.php");
+  }
+  ?>
+  <div id=contenu2>
+  <form method="POST" action="index.php?page=profile_secondary_add_validation" class="inscription">
+  
+    <h1>
+      Ajout d'un utilisateur secondaire
+    </h1>
+    
+    <h3>Informations personnelles</h3>
+    <p>
+    <label for="nomm">Nom </label>
+    <input id="nomm" type="text" name="nom" placeholder=" Nom"  required  title="Le nom doit contenir entre 2 et 25 caractères"/>
+    <label for="prenomm">Prénom </label>
+    <input id="prenomm" type="text" name="prenom" placeholder=" Prénom" required title="Le prénom doit contenir entre 2 et 25 caractères"/>
+    <div id="eveM">
+    <label for="mailm">E-mail </label>
+    <input id="mailm" type="email" name="email" placeholder=" E-mail" required title="E-mail du type : user@domain.com"/>
+    </div>
+
+   </p>
+    <p> Date de naissance</p>
+    <p>
+      <input type="text" name="date_naissance" id="choix_date" placeholder="jj/mm/aaaa" required/>
+    </p>
+    <h3>Informations de connexion</h3>
+    <p>
+        <div id="eveL" >
+      <input id="loginm" type="text" name="login" placeholder="Pseudo utilisé pour la connexion" size="25" required title="Le login doit contenir entre 3 et 25 caractères"/>
+         </div>
+    </p>
+    <p>
+    <label for="mdpm">Mot de passe </label>
+<input id="mdpm" type="password" name="mdp" placeholder="Mot de passe" title="Minimum 8 caractères (uniquement des chiffres et des lettres); au moins 1 lettre et 1 chiffre" required/>
+    </p>
+
+    <p>
+    <label for="mdp2m">Confimer le mot de passe </label>
+<input id="mdp2m" type="password" name="mdp_2" placeholder="Confirmer le mot de passe" required/>
+    </p>
+    <p><input type="checkbox" required /> J'ai lu et accepte les <a href="">Conditions générales d'utilisation</a> </p>
+    <p>
+      <input id="submitbutton" type="submit" value="Créer un compte" />
+      <p id="erreurchamp">
+      </p>
+      </p>
+  </form>
+
+ 
+</div>
