@@ -25,3 +25,34 @@
         $a=1;
       }
     }
+    
+    // on a bien vérifié, maintenant on peut voir en fonction des cas si on peut ajouter ou pas l'objet.
+    if($i==0)
+    {
+  	// on prend l'hypothèse que le numéro de série a bien été ajouté.
+  	 	if($a==1)
+      {
+        ajout_objet($db);
+        header("Location: index.php?page=objet"); // page objet ou on a les 4 menus verticals. 
+      }
+      else
+      {
+        $_SESSION['erreur'] = "Le numéro de série n'est pas attribué (25 caractères)</h3>";
+  	    header("Location: index.php?page=ajout_objet");//Redirection vers la page d'erreur sur la page ajout_objet.
+  	    exit(); 
+      }
+
+    }
+    else
+    {
+      $_SESSION['erreur'] = "Cet objet a déjà été ajouté.</h3>";
+  	  header("Location: index.php?page=ajout_objet");//Redirection vers la page d'erreur
+  	  exit();//Permet l'arret du script
+    }
+  }
+  else
+  {
+    echo '<br/>Erreur : Les variables ne sont pas correctement déclarées.';
+  }
+
+?>
