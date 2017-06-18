@@ -33,7 +33,6 @@
   	 	if($a==1)
       {
         ajout_objet($db);
-        header("Location: index.php?page=objet"); // page objet ou on a les 4 menus verticals. 
       }
       else
       {
