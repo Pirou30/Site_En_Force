@@ -1,7 +1,40 @@
 
 <?php
+// fonction pour ajouter un utilisateur sec
+function secondary_user_register($db)
+{
+  $pass_hache = sha1($_POST['mdp']);
 
+//Date variables
+  $today = date("Y-m-d H:i:s");
+  $dte=$_POST['date_naissance'];
+  $mm=$dte[0].$dte[1];
+  $dd=$dte[3].$dte[4];
+  $aaaa=$dte[6].$dte[7].$dte[8].$dte[9];
+  $date_naissance=$aaaa.'-'.$mm.'-'.$dd;
 
+  $req3 = $db->prepare('INSERT INTO utilisateur(nom, prenom, email, numero_de_telephone, adresse, type,
+  login, mot_de_passe, date_d_ajout, date_naissance,	id_utilisateur_1)
+
+  VALUES(:nom, :prenom, :email, :numero_de_telephone, :adresse, :type, :login, :mot_de_passe,
+   :date_d_ajout, :date_naissance,	:id_utilisateur_1)');
+
+  $req3 -> execute(array(
+   'nom' => $_POST['nom'],
+   'prenom' => $_POST['prenom'],
+   'email' => $_POST['email'],
+   'numero_de_telephone' => $_SESSION['numero_de_telephone'],
+   'adresse' => $_SESSION['adresse'],
+   'type' => secondaire,
+   'login' => $_POST['login'],
+   'mot_de_passe' => $pass_hache,
+   'date_d_ajout' => $today,
+   'date_naissance' => $date_naissance,
+   'id_utilisateur_1' =>$_SESSION['id_utilisateur']
+   ));
+  
+  
+  
 function get_primary_user_piece_list($db)
 {
   $user_id = $_SESSION['id_utilisateur'];
