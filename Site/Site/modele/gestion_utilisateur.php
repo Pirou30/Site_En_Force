@@ -32,7 +32,29 @@ function secondary_user_register($db)
    'date_naissance' => $date_naissance,
    'id_utilisateur_1' =>$_SESSION['id_utilisateur']
    ));
-  
+  $identifiant = $_POST['login'];
+   $sql = "SELECT id_utilisateur FROM utilisateur WHERE login = '".$identifiant."'";
+   $req = $db->query ($sql);
+   $userid = $req -> fetch();
+
+   $array_liste_piece = get_primary_user_piece_list($db);
+
+   $line = 0;
+   do
+   {
+     $piece_primaire = $array_liste_piece[$line]['id_piece'];
+     if (isset($piece_primaire))
+     {
+       $req = $db->prepare('INSERT INTO piece_objet ( id_utilisateur, id_piece) VALUES(:id_utilisateur, :id_piece)');
+       $req->execute(array(
+         'id_utilisateur' => $userid['id_utilisateur'],
+         'id_piece' => $piece_primaire
+       ));
+       $line++;
+       $next_user = $array_liste_piece[$line]['id_piece'];
+     }
+   } while (isset($next_user));
+}
   
   
 function get_primary_user_piece_list($db)
