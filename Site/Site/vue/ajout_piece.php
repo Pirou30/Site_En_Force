@@ -1,7 +1,7 @@
 <body id="bodyautre">
   <div id="contenu">
 
-<input value="Retour" class="boutonretour" require type="submit">
+<input value="Retour" class="boutonretour" require type="submit" onclick="history.go(-1)">
 <form method="POST" class="inscription" action="">
 
 <h3>Ajout d'une pièce</h3>
