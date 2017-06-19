@@ -62,8 +62,11 @@ function secondary_user_register($db)
 function get_primary_user_piece_list($db)
 {
   $user_id = $_SESSION['id_utilisateur'];
-  $sql = "SELECT id_piece, localisation_dans_la_maison FROM piece WHERE id_piece ";
-  return ;
+  $sql = "SELECT id_piece, localisation_dans_la_maison FROM piece WHERE id_piece IN (SELECT id_piece FROM posseder WHERE id_utilisateur = '".$user_id."')";
+  $request = $db->query ($sql);
+  $piece_owned_by_primary_user = $request -> fetchAll();
+
+  return $piece_owned_by_primary_user;
 }
 
 
