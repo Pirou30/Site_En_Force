@@ -7,7 +7,7 @@
     <h1 class="text">Suppression d'une pièce</h1>
   </div>
 <input value="Retour" class="boutonretour" type="submit" onclick="history.go(-1)">
-<form method="POST" class="basic-grey ajouto modifo" action="">
+<form method="POST" class="basic-grey ajouto modifo" action="index.php?page=verif_suppr_piece">
 
 
 <h3>Sélectionner la pièce à supprimer</h3>
