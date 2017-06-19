@@ -45,7 +45,7 @@ function secondary_user_register($db)
      $piece_primaire = $array_liste_piece[$line]['id_piece'];
      if (isset($piece_primaire))
      {
-       $req = $db->droit('INSERT INTO posseder(droit_d_utilisateur, date_de_modification_des_droits, id_utilisateur, id_piece) VALUES(:droit_d_utilisateur, :date_de_modification_des_droits, :id_utilisateur, :id_piece)');
+       $req = $db->droit('INSERT INTO droit(droit_d_utilisateur, date_de_modification_des_droits, id_utilisateur, id_piece) VALUES(:droit_d_utilisateur, :date_de_modification_des_droits, :id_utilisateur, :id_piece)');
        $req->execute(array(
          'droit_d_utilisateur' => NULL,
          'date_de_modification_des_droits' => $today,
@@ -62,7 +62,7 @@ function secondary_user_register($db)
 function get_primary_user_piece_list($db)
 {
   $user_id = $_SESSION['id_utilisateur'];
-  $sql = "SELECT id_piece, localisation_dans_la_maison FROM piece WHERE id_piece IN (SELECT id_piece FROM posseder WHERE id_utilisateur = '".$user_id."')";
+  $sql = "SELECT id_piece, localisation_dans_la_maison FROM piece WHERE id_piece IN (SELECT id_piece FROM droit WHERE id_utilisateur = '".$user_id."')";
   $request = $db->query ($sql);
   $piece_owned_by_primary_user = $request -> fetchAll();
 
