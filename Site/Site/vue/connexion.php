@@ -20,7 +20,7 @@
   }
   ?>
   
-<form method="POST" class="basic-grey connecto" action="index.php?page=dashboard">  
+<form method="POST" class="basic-grey connecto" action="index.php?page=verif_connexion">  
 
 
   <div id="banniereCo">Entrez vos identifiants</div>
