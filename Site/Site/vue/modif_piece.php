@@ -6,7 +6,7 @@
     <h1 class="text">Modification d'une pièce</h1>
   </div>
 <input value="Retour" class="boutonretour" type="submit" onclick="history.go(-1)">
-<form method="POST" class="inscription" action="">
+<form method="POST" class="inscription" action="index.php?page=verif_modif_piece">
 
 <h3>Sélectionner la pièce à modifier</h3>
 
