@@ -1,0 +1,46 @@
+<body id="bodyautre">
+  <div id="contenu2">
+  <div id="banniereautre" class="banner2">
+
+    <h1 class="text">Ajout d'un objet</h1>
+  </div>
+  <input value="Retour" class="boutonretour" required type="submit" onclick="history.go(-1)"> //revient à la page précédente
+  <?php
+
+  if (isset($_SESSION['erreur']))
+  {
+  echo '<h3 id="erreurco" class="basic-grey">Une erreur est survenue car : '.$_SESSION['erreur'];
+  unset($_SESSION['erreur']);
+
+  }
+  ?>
+  
+  <form method="POST" class="inscription" action="">
+  
+  <h3>
+    Entrer le numéro de série du périphérique à ajouter
+  </h3>
+  </br>
+
+<p>
+<input type="text" name="serie" placeholder="Entrer le numéro de série" required />
+</p>
+<h3>
+  Sélectionner le type de l'objet
+</h3>
+</br>
+
+<?php
+?>
+
+</select>
+</br>
+<p>
+  Ou ajouter un nouveau type :
+<input type="text" name="type2" required placeholder="Ajoutez un nouveau type" />
+</p>
+<input type="submit" value="Ajouter" />
+
+</form>
+</div>
+</body>
