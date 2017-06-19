@@ -2,7 +2,7 @@
   <div id="contenu">
 
 <input value="Retour" class="boutonretour" require type="submit" onclick="history.go(-1)">
-<form method="POST" class="inscription" action="">
+<form method="POST" class="inscription" action="index.php?page=verif_ajout_piece">
 
 <h3>Ajout d'une pièce</h3>
 
