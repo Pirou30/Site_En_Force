@@ -45,8 +45,10 @@ function secondary_user_register($db)
      $piece_primaire = $array_liste_piece[$line]['id_piece'];
      if (isset($piece_primaire))
      {
-       $req = $db->prepare('INSERT INTO piece_objet ( id_utilisateur, id_piece) VALUES(:id_utilisateur, :id_piece)');
+       $req = $db->droit('INSERT INTO posseder(droit_d_utilisateur, date_de_modification_des_droits, id_utilisateur, id_piece) VALUES(:droit_d_utilisateur, :date_de_modification_des_droits, :id_utilisateur, :id_piece)');
        $req->execute(array(
+         'droit_d_utilisateur' => NULL,
+         'date_de_modification_des_droits' => $today,
          'id_utilisateur' => $userid['id_utilisateur'],
          'id_piece' => $piece_primaire
        ));
