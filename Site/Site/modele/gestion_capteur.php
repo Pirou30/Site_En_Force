@@ -56,6 +56,6 @@ function ajout_objet($db)
   function recup_all_piece_ordered_by_name($db) 
   {
     $id_utilisateur = $_SESSION['id_utilisateur'];
-    $reponse = $db->query("SELECT * FROM piece WHERE id_piece IN (SELECT id_piece FROM posseder WHERE id_utilisateur = '".$id_utilisateur."') ORDER BY localisation_dans_la_maison DESC");
+    $reponse = $db->query("SELECT * FROM piece WHERE id_piece IN (SELECT id_piece FROM droit WHERE id_utilisateur = '".$id_utilisateur."') ORDER BY localisation_dans_la_maison DESC");
     return $reponse;
   }
